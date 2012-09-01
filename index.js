@@ -9,7 +9,9 @@ module.exports = function (obj, fn) {
     f.__proto__ = new C;
     
     Object.getOwnPropertyNames(Function.prototype).forEach(function (key) {
-        f.__proto__[key] = Function.prototype[key];
+        if (f[key] === undefined) {
+            f.__proto__[key] = Function.prototype[key];
+        }
     });
     
     Object.getOwnPropertyNames(obj).forEach(function (key) {
