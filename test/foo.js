@@ -31,4 +31,6 @@ test('funstantiate foo', function (t) {
     
     t.equal(fobj.call(null, 25), 100);
     t.equal(fobj.apply(null, [64]), 256);
+    t.ok(!obj.call);
+    t.ok(!obj.apply);
 });
