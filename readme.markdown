@@ -2,6 +2,8 @@
 
 make an instance callable like a function
 
+[![build status](https://secure.travis-ci.org/substack/funstance.png)](http://travis-ci.org/substack/funstance)
+
 # example
 
 ## funstantiate a prototypical object
