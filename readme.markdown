@@ -62,6 +62,9 @@ Return a function with all the properties and prototypical methods as `obj`.
 When `fobj()` is called, `fn()` will fire with the arguments and `this` set to
 the `obj`.
 
+Note that `obj` shouldn't be an Array or possibly other built-in types aside
+from Object since some of them behave strangely for performance reasons.
+
 # install
 
 With [npm](https://npmjs.org) do:
