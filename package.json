@@ -1,0 +1,38 @@
+{
+    "name" : "funstance",
+    "version" : "0.0.0",
+    "description" : "make an instance callable like a function",
+    "main" : "index.js",
+    "bin" : {},
+    "directories" : {
+        "example" : "example",
+        "test" : "test"
+    },
+    "devDependencies" : {
+        "tap" : "~0.3.0",
+        "inherits" : "~1.0.0"
+    },
+    "scripts" : {
+        "test" : "tap test/*.js"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/substack/funstance.git"
+    },
+    "homepage" : "https://github.com/substack/funstance",
+    "keywords" : [
+        "instance",
+        "function",
+        "object",
+        "instantiate",
+        "funstantiate",
+        "module",
+        "exports"
+    ],
+    "author" : {
+        "name" : "James Halliday",
+        "email" : "mail@substack.net",
+        "url" : "http://substack.net"
+    },
+    "license" : "MIT"
+}
