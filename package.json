@@ -1,6 +1,6 @@
 {
     "name" : "funstance",
-    "version" : "0.0.0",
+    "version" : "0.0.1",
     "description" : "make an instance callable like a function",
     "main" : "index.js",
     "bin" : {},

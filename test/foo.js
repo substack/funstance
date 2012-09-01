@@ -16,7 +16,7 @@ Foo.prototype.beep = function () {
 };
 
 test('funstantiate foo', function (t) {
-    t.plan(2);
+    t.plan(6);
     
     var obj = new Foo(4);
     var fobj = funstance(obj, function (n) {
