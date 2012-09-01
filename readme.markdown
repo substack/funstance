@@ -4,29 +4,6 @@ make an instance callable like a function
 
 # example
 
-## funstantiate an array
-
-``` js
-var funstance = require('funstance');
-var xs = [1,2,3];
-var fxs = funstance(xs, function (n) { return this.push(n) });
-
-console.log(fxs.length);
-console.log(fxs.shift());
-
-fxs(555);
-console.dir(fxs);
-```
-
-***
-
-```
-$ node xs.js
-3
-1
-[2,3,555]
-```
-
 ## funstantiate a prototypical object
 
 foo.js:
