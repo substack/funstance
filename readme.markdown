@@ -7,7 +7,8 @@ make an instance callable like a function
 ## funstantiate an array
 
 ``` js
-var xs = [1,2,3]
+var funstance = require('funstance');
+var xs = [1,2,3];
 var fxs = funstance(xs, function (n) { return this.push(n) });
 
 console.log(fxs.length);
@@ -28,13 +29,14 @@ $ node xs.js
 
 ## funstantiate a prototypical object
 
-suppose 
+foo.js:
 
 ``` js
 var inherits = require('inherits');
-var EventEmitter = require('events').EventEmitter;
+var Stream = require('stream');
 
 module.exports = Foo;
+inherits(Foo, Stream);
 
 function Foo (x) {
     this.x = x;
@@ -61,7 +63,9 @@ fobj.on('beep', console.log);
 fobj.beep();
 ```
 
-***
+Note that `.on()` is defined all the way in EventEmitter, which is 3 times
+removed up the prototype chain from `fobj`, yet `fobj.on()` still works despite
+being a function.
 
 ```
 $ node main.js
