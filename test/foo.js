@@ -37,3 +37,16 @@ test('funstantiate foo', function (t) {
     t.ok(!obj.apply);
     t.ok(!obj.bind);
 });
+
+test('let call/bind/apply to work too', function(t) {
+    t.plan(3);
+
+    var obj = new Foo(4)
+    var fobj = funstance(obj, function(n) {
+        return n * this.x
+    }, true);
+
+    t.equal(fobj.call({ x: 2 }, 25), 50);
+    t.equal(fobj.apply({ x: 3 }, [9]), 27);
+    t.equal(fobj.bind({ x: 5 }, 25)(), 125);
+})
