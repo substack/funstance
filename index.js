@@ -1,7 +1,9 @@
-module.exports = function(obj, fn, unbound) {
+var global = (function(){ return this; })()
+
+module.exports = function(obj, fn) {
     var f = function () {
         if (typeof fn !== 'function') return;
-        return fn.apply(unbound ? this : obj, arguments);
+        return fn.apply(this === global || typeof this === 'undefined' ? obj : this, arguments);
     };
 
     function C () {}

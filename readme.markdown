@@ -58,15 +58,11 @@ boop
 var funstance = require('funstance')
 ```
 
-## var fobj = funstance(obj, fn, [unbound])
+## var fobj = funstance(obj, fn)
 
 Return a function with all the properties and prototypical methods as `obj`.
 When `fobj()` is called, `fn()` will fire with the arguments and `this` set to
 the `obj`.
-
-By passing `unbound` as true, `this` instead defaults to the global object and
-allows you to use `bind`, `call` and `apply` for running the method under
-another context.
 
 Note that `obj` shouldn't be an Array or possibly other built-in types aside
 from Object since some of them behave strangely for performance reasons.
