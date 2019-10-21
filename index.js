@@ -14,7 +14,7 @@ module.exports = function (obj, fn) {
         }
     });
     
-    Object.getOwnPropertyNames(obj).forEach(function (key) {
+    [...Object.getOwnPropertyNames(obj), ...Object.getOwnPropertySymbols(obj)].forEach(function (key) {
         f[key] = obj[key];
     });
     

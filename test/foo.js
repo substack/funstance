@@ -7,8 +7,11 @@ var Stream = require('stream');
 module.exports = Foo;
 inherits(Foo, Stream);
 
+const fooSymbol = Symbol.for('foo');
+
 function Foo (x) {
     this.x = x;
+    this[fooSymbol] = x * x;
 }
 
 Foo.prototype.beep = function () {
@@ -16,7 +19,7 @@ Foo.prototype.beep = function () {
 };
 
 test('funstantiate foo', function (t) {
-    t.plan(8);
+    t.plan(9);
     
     var obj = new Foo(4);
     var fobj = funstance(obj, function (n) {
@@ -32,6 +35,7 @@ test('funstantiate foo', function (t) {
     t.equal(fobj.call(null, 25), 100);
     t.equal(fobj.apply(null, [64]), 256);
     t.equal(fobj.bind(null, 0.25)(), 1);
+    t.equal(fobj[fooSymbol], 16);
     
     t.ok(!obj.call);
     t.ok(!obj.apply);
